@@ -22,8 +22,7 @@ pipeline {
  steps {
  echo 'Deploying...'
  // Comandos para desplegar el software
- sh 'mkdir deployment'
- sh 'echo "Deployment successful" > deployment/deploy.log
+
  }
  }
  }
