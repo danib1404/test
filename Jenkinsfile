@@ -22,7 +22,7 @@ pipeline {
  steps {
  echo 'Deploying...'
  // Comandos para desplegar el software
-
+ sh 'echo "Deployment successful" > deploy.log'
  }
  }
  }
