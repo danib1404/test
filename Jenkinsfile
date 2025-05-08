@@ -18,11 +18,18 @@ pipeline {
  sh 'echo "Test Passed" > test.log'
  }
  }
+ stage('Build Docker Image') {
+ steps {
+ echo 'Building Docker Image...'
+ sh 'docker build -t nginx:1.24.0 .'
+ }
+ }
  stage('Deploy') {
  steps {
  echo 'Deploying...'
  // Comandos para desplegar el software
- sh 'echo "Deployment successful" > deploy.log'
+ echo 'Deploying to Kubernetes...'
+ sh 'kubectl apply -f deployment.yaml'
  }
  }
  }
